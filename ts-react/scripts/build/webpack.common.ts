@@ -1,8 +1,9 @@
 import path from 'path'
+import * as webpack from 'webpack'
+// import { RuleSetUseItem } from 'webpack'
 import WebpackBar from 'webpackbar'
 import FriendlyErrorsPlugin from 'friendly-errors-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import { Configuration, RuleSetUseItem } from 'webpack'
 import { Options as HtmlMinifierOptions } from 'html-minifier'
 import { PROJECT_ROOT, PROJECT_NAME, __DEV__ } from '../constants'
 
@@ -23,7 +24,7 @@ const htmlMiniFierOptions: HtmlMinifierOptions = {
   useShortDoctype: true,
 }
 
-function getStyleLoaderConfig(importLoaders: number, modules = false): RuleSetUseItem[] {
+function getStyleLoaderConfig(importLoaders: number, modules = false): webpack.RuleSetUseItem[] {
   return [
     'style-loader',
     {
@@ -41,7 +42,7 @@ function getStyleLoaderConfig(importLoaders: number, modules = false): RuleSetUs
   ]
 }
 
-const commonConfig: Configuration = {
+const commonConfig: webpack.Configuration = {
   cache: true,
   entry: path.resolve(PROJECT_ROOT, './src'),
   output: {

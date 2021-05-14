@@ -3,12 +3,12 @@ import path from 'path'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import { merge } from 'webpack-merge'
-import { Configuration, HotModuleReplacementPlugin } from 'webpack'
+import { HotModuleReplacementPlugin } from 'webpack'
 import 'webpack-dev-server'
 import commonConfig from './webpack.common'
 import { DEFAULT_PORT, HOST, PROJECT_ROOT } from '../constants'
 
-const developmentConfig: Configuration = merge(commonConfig, {
+const developmentConfig = merge(commonConfig, {
   mode: 'development',
   // a bug in webpack-dev-server v3 https://github.com/webpack/webpack-dev-server/issues/2758 when you're using it with webpack 5 and browserslist.
   // 所以这里需要设置 target 为 web

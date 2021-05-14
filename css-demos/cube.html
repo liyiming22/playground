@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Demo</title>
+</head>
+<body>
+	<style>
+		.cube-box {
+			position: relative;
+			width: 30px;
+			height: 100px;
+			transform-style: preserve-3d;
+			transform: rotateX(-30deg) rotateY(45deg);
+		}
+
+		.cube-box:hover {
+			animation: upper 2s cubic-bezier(1, 0, 0, 1) forwards;
+		}
+
+		@keyframes upper {
+			100% {
+				height: 200px;
+			}
+		}
+
+		.cube {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		.cube1 {
+			width: 100%;
+			height: 100%;
+			background: #0ff;
+		}
+
+		.cube2 {
+			width: 100%;
+			height: 100%;
+			background: #0ff;
+			transform-origin: left top;
+			transform: rotateY(-90deg);
+		}
+
+		.cube3 {
+			width: 100%;
+			height: 100%;
+			background: #0ff;
+			transform-origin: right top;
+			transform: rotateY(90deg);
+		}
+
+		.cube4{
+			width: 100%;
+			height: 100%;
+			background: #0ff;
+			/* transform-origin: right top; */
+			transform: translateZ(30px);
+		}
+
+		.cube5{
+			width: 100%;
+			padding-top: 100%;
+			background: #0ff;
+			transform-origin: left top;
+			transform: rotateX(90deg);
+		}
+
+		.cube6{
+			width: 100%;
+			padding-top: 100%;
+			background: #0ff;
+			top: inherit;
+			bottom: 0;
+			transform-origin: left bottom;
+			transform: rotateX(-90deg);
+		}
+	</style>
+	<div class="cube-box">
+		<div class="cube cube1"></div>
+		<div class="cube cube2"></div>
+		<div class="cube cube3"></div>
+		<div class="cube cube4"></div>
+		<div class="cube cube5"></div>
+		<div class="cube cube6"></div>
+	</div>
+</body>
+</html>

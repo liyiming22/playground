@@ -58,6 +58,20 @@ module.exports = {
     'no-console': OFF,
     'unicorn/no-for-loop': ERROR,
     'react/jsx-props-no-spreading': OFF,
+    'unicorn/prevent-abbreviations': [
+      'error',
+      {
+        replacements: {
+          props: {
+            properties: false,
+          },
+          e: {
+            event: false,
+            error: false,
+          },
+        },
+      },
+    ],
   },
   plugins: ['react', 'unicorn', 'promise', '@typescript-eslint', 'prettier'],
   settings: {
