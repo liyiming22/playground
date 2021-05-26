@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Select, { OptionValue } from './Select'
 // import Select, { OptionValue } from './Select1'
 import AscLoading from './AscLoading'
+import Deps from './Deps'
 
 const App: React.FC = () => {
   const targets = [
@@ -23,6 +24,7 @@ const App: React.FC = () => {
       {/* <Select value={target} onChange={(value) => setTarget(value)} /> */}
       <Select options={targets} value={target} onChange={setTarget} />
       <AscLoading />
+      <Deps />
     </>
   )
 }
