@@ -59,3 +59,23 @@ type FooReturnType = ReturnType<typeof bar>
 
 // string
 type NakedFooReturnType = PromiseType<FooReturnType>
+
+// type Fnc = (...arguments_: any) => any
+type Fnc = () => any
+// type Dfc = Function
+
+const a: Fnc = (abc = 123) => {
+  return abc
+}
+
+// test code goes here...
+interface ITest {
+  fnc: () => any
+}
+
+type GetOption = (nav: string) => any
+const getOption: GetOption = (nav = '123') => nav
+
+const itest = {
+  fnc: getOption,
+}

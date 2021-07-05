@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable unicorn/prevent-abbreviations */
 import { useState, useEffect, useRef, useCallback } from 'react'
 
